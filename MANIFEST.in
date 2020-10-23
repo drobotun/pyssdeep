@@ -1,0 +1,6 @@
+include READMY.rst
+include HISTORY.rst
+include LICENSE
+graft tests
+graft test_file
+graft pyssdeep/bin
