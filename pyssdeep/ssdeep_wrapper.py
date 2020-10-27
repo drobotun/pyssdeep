@@ -1,6 +1,6 @@
 """The Python wrapper for ssdeep.
 
-This is a Python wrapper for ssdeep by Jesse Kornblum, which is a library for
+This package is a Python wrapper for ssdeep by Jesse Kornblum, which is a library for
 computing Context Triggered Piecewise Hashes (CTPH).
 """
 import os
@@ -221,16 +221,16 @@ def fuzzy_free(state):
     """
     fuzzy_lib.fuzzy_free(state)
 
-def fuzzy_hash_buf(buffer, buffer_size):
+def fuzzy_hash_buf(buf, buf_len):
     """Compute the fuzzy hash of a buffer.
 
     This function is a wrapper for the 'fuzzy_hash_buf' function from the
     library 'fuzzy.dll' or 'fuzzy_64.dll'. The computes the fuzzy hash of the
-    first 'buf_len' bytes of the 'buffer'.
+    first 'buf_len' bytes of the 'buf'.
 
     Args:
-      buffer: The data to be fuzzy hashed (at a byte format).
-      buffer_size: The length of the given 'buffer'.
+      buf: The data to be fuzzy hashed (at a byte format).
+      buf_len: The length of the given 'buffer'.
 
     Returns:
       The fuzzy hash of the 'buffer' (at a string format).
@@ -238,9 +238,9 @@ def fuzzy_hash_buf(buffer, buffer_size):
     Raises:
       FuzzyHashError: If a function execution error occurred.
     """
-    buffer = ctypes.create_string_buffer(buffer)
+    buf = ctypes.create_string_buffer(buf)
     hash_result = ctypes.create_string_buffer(_FUZZY_MAX_RESULT)
-    result = fuzzy_lib.fuzzy_hash_buf(buffer, buffer_size, hash_result)
+    result = fuzzy_lib.fuzzy_hash_buf(buf, buf_len, hash_result)
     if result != 0:
         raise FuzzyHashError(result)
     return hash_result.value.decode('ascii')

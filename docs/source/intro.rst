@@ -1,3 +1,9 @@
+Introduction
+============
+
+Overview
+--------
+
 This package is a Python wrapper for ssdeep by Jesse Kornblum, which is a
 library for computing Context Triggered Piecewise Hashes (CTPH).
 
@@ -60,3 +66,16 @@ License
 -------
 
 MIT Copyright (c) 2020 Evgeny Drobotun
+
+Source code
+-----------
+
+Package source code: https://github.com/drobotun/gostcrypto
+
+Release hystory
+---------------
+
+.. rubric:: 1.0.0 (20.10.2020)
+
+- First release of **'pyssdeep'**
+

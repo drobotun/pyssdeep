@@ -31,8 +31,9 @@ def new(**kwargs):
       New hash object.
 
     Raises:
-      FuzzyHashError: If a function execution error occurred or the argument
-        type is incorrect.
+      TypeError: If a argument type is incorrect.
+      FuzzyHashError: If a function execution error occurred or if the
+        'encoding' value is incorrect.
     """
     encoding = kwargs.get('encoding', 'utf-8')
     data = kwargs.get('data', bytearray(b''))
@@ -62,9 +63,9 @@ class FuzzyHash:
           encoding: Encoding is used if 'data' is string.
 
         Raises:
-          UnicodeEncodeError: If the 'encoding' value is incorrect.
           TypeError: If a argument type is incorrect.
-          FuzzyHashError: If a function execution error occurred.
+          FuzzyHashError: If a function execution error occurred or if the
+            'encoding' value is incorrect.
         """
         self._name = 'ssdeep'
         try:
@@ -81,8 +82,8 @@ class FuzzyHash:
     def copy(self):
         """Create the copy of the hash object.
 
-        The copy of of the hash object can be used with 'fuzzy_update' and
-        'fuzzy_digest' independently of the original.
+        The copy of of the hash object can be used with 'update' and
+        'digest' independently of the original.
 
         Returns:
           Copy of the hash object.
@@ -111,7 +112,6 @@ class FuzzyHash:
             'utf-8').
 
         Raises:
-          UnicodeEncodeError: If the 'encoding' value is incorrect.
           TypeError: If a argument type is incorrect.
           FuzzyHashError: If a function execution error occurred or if the
             'encoding' value is incorrect.
@@ -302,7 +302,6 @@ def get_hash_buffer(buffer, encoding='utf-8'):
       The fuzzy hash of the buffer (at a string format).
 
     Raises:
-      UnicodeEncodeError: If the 'encoding' value is incorrect.
       TypeError: If a argument type is incorrect.
       FuzzyHashError: If a function execution error occurred or if the
         'encoding' value is incorrect.
