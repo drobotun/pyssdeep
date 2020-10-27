@@ -7,7 +7,7 @@ The python-wrapper for ssdeep
     :target: https://pyssdeep.readthedocs.io/
 
 
-This package is a Python wrapper for ssdeep by Jesse Kornblum, which is a
+This package is a Python wrapper for `ssdeep <https://ssdeep-project.github.io/ssdeep/index.html>`_ by Jesse Kornblum, which is a
 library for computing Context Triggered Piecewise Hashes (CTPH).
 
 Installation
