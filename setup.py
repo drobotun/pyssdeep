@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-import pefile_scripts
+import pyssdeep
 
 with open('README.rst', 'r', encoding='utf-8') as readme_file:
     readme = readme_file.read()
