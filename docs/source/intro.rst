@@ -70,7 +70,7 @@ MIT Copyright (c) 2020 Evgeny Drobotun
 Source code
 -----------
 
-Package source code: https://github.com/drobotun/gostcrypto
+Package source code: https://github.com/drobotun/pyssdeep
 
 Release hystory
 ---------------
