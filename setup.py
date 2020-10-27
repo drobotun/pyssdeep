@@ -9,17 +9,17 @@ with open('HISTORY.rst', 'r', encoding='utf-8') as history_file:
 setup(
     name = pyssdeep.__name__,
     version = pyssdeep.__version__,
-    description = 'ssdeep Python wrapper',
+    description = 'The python-wrapper for ssdeep',
     long_description = readme + '\n\n' + history,
     author = pyssdeep.__author__,
     author_email = pyssdeep.__author_email__,
-    url='https://github.com/drobotun/pyssdeep',
+    url='https://github.com/drobotun/pyssdeep/',
     zip_safe=False,
     license = pyssdeep.__license__,
     keywords='ssdeep, fuzzy hash, python',
     project_urls={
         'Documentation': 'https://pyssdeep.readthedocs.io/',
-        'Source': 'https://github.com/drobotun/pyssdeep'
+        'Source': 'https://github.com/drobotun/pyssdeep/'
     },
     classifiers=[
         'Development Status :: 4 - Beta',
