@@ -1,15 +1,11 @@
 language: python
-jobs:
-  include:
-    - name: "Python 3.8.0 on Xenial Linux"
-      python: 3.8           
-    - name: "Python 3.8.0 on Windows"
-      os: windows
-      language: shell
+python:
+  - "3.6"
+  - "3.7"
+  - "3.8"
 
 install:
-  #- pip install codecov
-  #- pip install coveralls
+  - pip install codecov
   - pip install pytest pytest-cov
 
 script:
@@ -18,4 +14,3 @@ script:
 
 after_success:
   - codecov
-  #- coveralls
