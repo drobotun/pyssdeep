@@ -82,6 +82,6 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'Sphinx.tex', 'GOST cryptographic function',
+  ('index', 'Sphinx.tex', 'SSDEEP Python wrapper',
    'Drobotun Evgeny', 'manual'),
 ]
