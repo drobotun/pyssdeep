@@ -31,5 +31,6 @@ setup(
     test_suite="tests",
     packages=find_packages(),
     include_package_data=True,
+    data_files=[('test_file', ['test_file/test_file.txt'])],
     )
 
