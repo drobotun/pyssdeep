@@ -1,4 +1,5 @@
-"""
+"""This module implements fuzzy hash calculation API according to the principles
+defined in pep 452.
 """
 import os
 import six

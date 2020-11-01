@@ -1,7 +1,6 @@
 """The Python wrapper for ssdeep.
 
-This package is a Python wrapper for ssdeep by Jesse Kornblum, which is a library for
-computing Context Triggered Piecewise Hashes (CTPH).
+This module is a Python wrapper for ssdeep's library (fuzzy.dll or fuzzy.so).
 """
 import os
 import sys
@@ -34,7 +33,7 @@ else:
 try:
     fuzzy_lib = ctypes.cdll.LoadLibrary(lib_path)
 except FileNotFoundError:
-    print('The library fuzzy.dll or fuzzy_64.dll not found')
+    print('The library fuzzy.dll or fuzzy.so not found')
     sys.exit(0)
 
 # pylint: disable=invalid-name
@@ -44,7 +43,7 @@ class _blockhash_context(ctypes.Structure):
     """The wrapper for 'blockhash_context' structure.
 
     This class is a wrapper for the 'blockhash_context' structure from the
-    library 'fuzzy.dll' or 'fuzzy_64.dll'.
+    library 'fuzzy.dll' or 'fuzzy.so'.
     """
 
     _fields_ = [
@@ -75,7 +74,7 @@ class fuzzy_state(ctypes.Structure):
     """The wrapper for 'fuzzy_context' structure.
 
     This class is a wrapper for the 'fuzzy_context' structure from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'.
+    'fuzzy.dll' or 'fuzzy.so'.
     """
 
     _fields_ = [
@@ -102,7 +101,7 @@ def fuzzy_new():
     """Construct an instance of the 'fuzzy_state' class.
 
     This function is a wrapper for the 'fuzzy_new' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'. To use it call 'fuzzy_update' and
+    'fuzzy.dll' or 'fuzzy.so'. To use it call 'fuzzy_update' and
     'fuzzy_digest' on it. It must be disposed with 'fuzzy_free'.
 
     Returns:
@@ -121,7 +120,7 @@ def fuzzy_clone(state):
     """Create a copy of a 'fuzzy_state' object.
 
     This function is a wrapper for the 'fuzzy_clone' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'. The copy of a 'fuzzy_state' object can be
+    'fuzzy.dll' or 'fuzzy.so'. The copy of a 'fuzzy_state' object can be
     used with 'fuzzy_update' and 'fuzzy_digest' independently of the original.
     It must be disposed with 'fuzzy_free' like the original has to be cleared in
     this way.
@@ -145,7 +144,7 @@ def fuzzy_update(state, buffer, buffer_size):
     """Feed the data contained in the given 'buffer' to the 'state'.
 
     This function is a wrapper for the 'fuzzy_update' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'. When an error occurs, the 'state' is
+    'fuzzy.dll' or 'fuzzy.so'. When an error occurs, the 'state' is
     undefined. In that case it must not be passed to any function besides
     'fuzzy_free'.
 
@@ -166,7 +165,7 @@ def fuzzy_digest(state, flag):
     """Obtain the fuzzy hash from the 'state'.
 
     This function is a wrapper for the 'fuzzy_digest' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'. This function does not change the 'state'
+    'fuzzy.dll' or 'fuzzy.so'. This function does not change the 'state'
     at all. It reports the hash for the concatenation of the data previously
     fed using 'fuzzy_update' function.
 
@@ -190,7 +189,7 @@ def fuzzy_compare(signature_1, signature_2):
     """Compute the match score between two fuzzy hash signatures.
 
     This function is a wrapper for the 'fuzzy_compare' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'.
+    'fuzzy.dll' or 'fuzzy.so'.
 
     Args:
       signature_1: The first fuzzy hash signature (at a string format).
@@ -214,7 +213,7 @@ def fuzzy_free(state):
     """Dispose a 'fuzzy_state' object.
 
     This function is a wrapper for the 'fuzzy_free' function from the library
-    'fuzzy.dll' or 'fuzzy_64.dll'.
+    'fuzzy.dll' or 'fuzzy.so'.
 
     Args:
       state: The 'fuzzy_state' object.
@@ -225,7 +224,7 @@ def fuzzy_hash_buf(buf, buf_len):
     """Compute the fuzzy hash of a buffer.
 
     This function is a wrapper for the 'fuzzy_hash_buf' function from the
-    library 'fuzzy.dll' or 'fuzzy_64.dll'. The computes the fuzzy hash of the
+    library 'fuzzy.dll' or 'fuzzy.so'. The computes the fuzzy hash of the
     first 'buf_len' bytes of the 'buf'.
 
     Args:
@@ -249,7 +248,7 @@ def fuzzy_hash_filename(filename):
     """Compute the fuzzy hash of a file.
 
     This function is a wrapper for the 'fuzzy_hash_filename' function from the
-    library 'fuzzy.dll' or 'fuzzy_64.dll'. Opens, reads, and hashes the contents
+    library 'fuzzy.dll' or 'fuzzy.so'. Opens, reads, and hashes the contents
     of the file 'filename'.
 
     Args:
@@ -272,7 +271,7 @@ def fuzzy_set_total_input_length(state, total_fixed_length):
     """Set fixed length of input.
 
     This function is a wrapper for the 'fuzzy_set_total_input_length' function
-    from the library 'fuzzy.dll' or 'fuzzy_64.dll'. If we know the file size to
+    from the library 'fuzzy.dll' or 'fuzzy.so'. If we know the file size to
     compute fuzzy digest, we can boost computation by restricting range of
     blocksize.
 

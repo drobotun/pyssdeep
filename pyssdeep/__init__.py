@@ -1,4 +1,7 @@
-"""
+"""The Python wrapper for ssdeep.
+
+This package is a Python wrapper for ssdeep by Jesse Kornblum, which is a
+library for computing Context Triggered Piecewise Hashes (CTPH).
 """
 
 __title__ = 'pyssdeep'
