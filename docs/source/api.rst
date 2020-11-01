@@ -627,7 +627,7 @@ Compare two fazzy hash signatures.
     - **signature_1(** *string* **)** - the first fuzzy hash signature.
     - **signature_2(** *string* **)** - the second fuzzy hash signature.
 
-**Retuens**:
+**Returns**:
     The value from zero to 100 indicating the match score of the two fuzzy hash signatures. A match score of zero indicates the signatures did not match. 
 
 **Returns type**:
