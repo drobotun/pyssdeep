@@ -10,6 +10,7 @@ The python-wrapper for ssdeep
 .. image:: https://codecov.io/gh/drobotun/pyssdeep/branch/master/graph/badge.svg?token=VHQQRO279Z
     :target: https://codecov.io/gh/drobotun/pyssdeep
 .. image:: https://img.shields.io/pypi/dm/pyssdeep
+    :target: https://pypi.org/project/pyssdeep/
 
 This package is a Python wrapper for `ssdeep <https://ssdeep-project.github.io/ssdeep/index.html>`_ by Jesse Kornblum, which is a
 library for computing Context Triggered Piecewise Hashes (CTPH).
