@@ -5,8 +5,7 @@ The python-wrapper for ssdeep
     :target: http://doge.mit-license.org
 .. image:: https://readthedocs.org/projects/pyssdeep/badge/?version=latest
     :target: https://pyssdeep.readthedocs.io/
-.. image:: https://api.travis-ci.org/drobotun/pyssdeep.svg?branch=master&status=unknown
-    :target: https://travis-ci.org/github/drobotun/pyssdeep
+
 .. image:: https://codecov.io/gh/drobotun/pyssdeep/branch/master/graph/badge.svg?token=VHQQRO279Z
     :target: https://codecov.io/gh/drobotun/pyssdeep
 .. image:: https://img.shields.io/pypi/dm/pyssdeep
