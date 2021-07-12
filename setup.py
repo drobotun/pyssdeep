@@ -16,7 +16,7 @@ setup(
     url='https://github.com/drobotun/pyssdeep/',
     zip_safe=False,
     license = pyssdeep.__license__,
-    keywords='ssdeep, fuzzy hash, python',
+    keywords='ssdeep, fuzzy-hash, python',
     project_urls={
         'Documentation': 'https://pyssdeep.readthedocs.io/',
         'Source': 'https://github.com/drobotun/pyssdeep/'
