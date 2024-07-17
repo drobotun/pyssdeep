@@ -27,6 +27,8 @@ elif sys.platform == 'linux':
         lib_path = os.path.join(package_path, r'bin/linux/fuzzy_64.so')
     else:
         lib_path = os.path.join(package_path, r'bin/linux/fuzzy.so')
+elif sys.platform == 'darwin':
+    lib_path = os.path.join(package_path, r'bin/darwin/fuzzy.dylib')
 else:
     print('Unsupported operation sysytem')
     sys.exit(0)
