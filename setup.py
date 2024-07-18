@@ -7,15 +7,15 @@ with open('HISTORY.rst', 'r', encoding='utf-8') as history_file:
     history = history_file.read()
 
 setup(
-    name = pyssdeep.__name__,
-    version = pyssdeep.__version__,
-    description = 'The python-wrapper for ssdeep',
-    long_description = readme + '\n\n' + history,
-    author = pyssdeep.__author__,
-    author_email = pyssdeep.__author_email__,
+    name=pyssdeep.__name__,
+    version=pyssdeep.__version__,
+    description='The python-wrapper for ssdeep',
+    long_description=readme + '\n\n' + history,
+    author=pyssdeep.__author__,
+    author_email=pyssdeep.__author_email__,
     url='https://github.com/drobotun/pyssdeep/',
     zip_safe=False,
-    license = pyssdeep.__license__,
+    license=pyssdeep.__license__,
     keywords='ssdeep, fuzzy-hash, python',
     project_urls={
         'Documentation': 'https://pyssdeep.readthedocs.io/',
@@ -30,7 +30,9 @@ setup(
     ],
     test_suite="tests",
     packages=find_packages(),
+    install_requires=[
+        'six==1.16.0'
+    ],
     include_package_data=True,
     data_files=[('test_file', ['test_file/test_file.txt'])],
-    )
-
+)
